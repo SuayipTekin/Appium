@@ -2,6 +2,7 @@ package SoftwareTestSolutions;
 
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -25,9 +26,10 @@ public class AppiumBasic extends BaseTest {
         driver.findElement(AppiumBy.accessibilityId("3. Preference dependencies")).click();
         driver.findElement(By.id("android:id/checkbox")).click();
         driver.findElement(By.xpath("//android.widget.TextView[@resource-id='android:id/title' and @text='WiFi settings']")).click();
+        String alertTitle = driver.findElement(By.id("android:id/alertTitle")).getText();
+        Assert.assertEquals(alertTitle, "WiFi settings");
         driver.findElement(By.id("android:id/edit")).sendKeys("Suayip WIFI");
         driver.findElement(AppiumBy.id("android:id/button1")).click();
-
     }
 
 }
