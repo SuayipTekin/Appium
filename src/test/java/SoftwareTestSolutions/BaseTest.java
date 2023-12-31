@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeTest;
 import java.io.File;
 import java.net.URL;
 import java.net.MalformedURLException;
+import java.time.Duration;
 
 
 public class BaseTest {
@@ -32,6 +33,7 @@ public class BaseTest {
         options.setApp("//Users//suayiptekin//eclipse-workspace//Appium//src//test//java//resources//ApiDemos-debug.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterClass

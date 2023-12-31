@@ -22,6 +22,11 @@ public class AppiumBasic extends BaseTest {
         // Locators android locators support appium
         //1. Xpath, id, Accessibility id, classname, androidUIAutomator
         driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+        driver.findElement(AppiumBy.accessibilityId("3. Preference dependencies")).click();
+        driver.findElement(By.id("android:id/checkbox")).click();
+        driver.findElement(By.xpath("//android.widget.TextView[@resource-id='android:id/title' and @text='WiFi settings']")).click();
+        driver.findElement(By.id("android:id/edit")).sendKeys("Suayip WIFI");
+        driver.findElement(AppiumBy.id("android:id/button1")).click();
 
     }
 
